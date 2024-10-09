@@ -1,3 +1,3 @@
 <x-home-base>
-  <h1>Homepage</h1>
+  <h1>Dokumen Publik</h1>
 </x-home-base>

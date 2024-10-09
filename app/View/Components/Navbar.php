@@ -14,7 +14,6 @@ class Navbar extends Component
 
     public $navItems;
     public $currentRoute;
-    public $test;
     
     public function __construct()
     {
@@ -28,27 +27,23 @@ class Navbar extends Component
             [
                 'name' => 'Administrasi',
                 'type' => 'dropdown',
+                'urls' => [route('visi-misi'), route('struktur-organisasi'), route('dokumen-publik') ],
                 'items' => [
-                    ['name' => 'Visi dan Misi', 'url' => '#'],
-                    ['name' => 'Struktur Organisasi', 'url' => '#'],
-                    ['name' => 'Dokumen Publik', 'url' => '#'],
+                    ['name' => 'Visi dan Misi', 'url' => route('visi-misi')],
+                    ['name' => 'Struktur Organisasi', 'url' => route('struktur-organisasi')],
+                    ['name' => 'Dokumen Publik', 'url' => route('dokumen-publik')],
                 ],
             ],
             [
                 'name' => 'Berita dan Informasi',
                 'type' => 'link',
-                'url' => '#',
+                'url' => route('berita-informasi'),
             ],
 
         ];
 
         // Get current route
-        $this->currentRoute = request()->url();
-
-        $this->test = array_map(function ($item) {
-            return $item['url'];
-        }, $this->navItems[1]['items']);
-        
+        $this->currentRoute = request()->url();        
     }
 
     /**

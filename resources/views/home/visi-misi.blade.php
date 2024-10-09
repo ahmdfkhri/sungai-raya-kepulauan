@@ -1,3 +1,3 @@
 <x-home-base>
-  <h1>Homepage</h1>
+  <h1>Visi dan Misi</h1>
 </x-home-base>
