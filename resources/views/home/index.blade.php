@@ -1,3 +1,3 @@
 <x-base title="">
-  Homescreen
+  <x-navbar />
 </x-base>
