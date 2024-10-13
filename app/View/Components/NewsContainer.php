@@ -15,6 +15,7 @@ class NewsContainer extends Component
      */
     public function __construct()
     {
+
         $this->news = [
             [
                 'title' => 'Lorem',
@@ -25,6 +26,21 @@ class NewsContainer extends Component
                 'title' => 'Ipsum',
                 'url' => route('berita-informasi'),
                 'imageUrl' => 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            ],
+            [
+                'title' => 'Berita Penting',
+                'url' => route('berita-informasi'),
+                'imageUrl' => 'https://images.unsplash.com/photo-1727887746394-8b5c23c98b40?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            ],
+            [
+                'title' => 'Berita Penting',
+                'url' => route('berita-informasi'),
+                'imageUrl' => 'https://images.unsplash.com/photo-1727887746394-8b5c23c98b40?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            ],
+            [
+                'title' => 'Berita Penting',
+                'url' => route('berita-informasi'),
+                'imageUrl' => 'https://images.unsplash.com/photo-1727887746394-8b5c23c98b40?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             ],
         ];
     }

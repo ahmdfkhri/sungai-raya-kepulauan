@@ -1,6 +1,8 @@
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:opacity-60 transition-all duration-300 hover:scale-105">
-  <a href="{{ $url }}">
-    <img class="rounded-t-lg" src="{{ $imageUrl }}" alt="{{ $title }}" />
+<div class="md:max-w-sm w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 lg:flex-shrink-0">
+  <a href="{{ $url }}" class="hover:opacity-60 transition-all duration-300 ">
+    <div class="relative w-full pb-[75%] md:pb-[75%]">
+      <img class="absolute top-0 left-0 w-full h-full object-cover rounded-t-lg" src="{{ $imageUrl }}" alt="{{ $title }}"/>
+    </div>
   </a>
   <div class="p-5">
     <a href="{{ $url }}">
