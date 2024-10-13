@@ -9,13 +9,19 @@ use Illuminate\View\Component;
 class NewsContainer extends Component
 {
     public $news;
+    public $containerTitle;
+    public $containerDescription;
+    public $containerUrl;
 
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($containerTitle, $containerDescription, $containerUrl)
     {
-
+        $this->containerTitle = $containerTitle;
+        $this->containerDescription = $containerDescription;
+        $this->containerUrl = $containerUrl;
+        
         $this->news = [
             [
                 'title' => 'Lorem',
@@ -40,7 +46,7 @@ class NewsContainer extends Component
             [
                 'title' => 'Berita Penting',
                 'url' => route('berita-informasi'),
-                'imageUrl' => 'https://images.unsplash.com/photo-1727887746394-8b5c23c98b40?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                'imageUrl' => 'https://images.unsplash.com/photo-1728292411378-cdb1bdd02591?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             ],
         ];
     }

@@ -21,3 +21,11 @@ Route::get('/dokumen-publik', function () {
 Route::get('/berita-informasi', function () {
   return view('home.berita-informasi');
 })->name('berita-informasi');
+
+Route::get('/berita', function () {
+  return view('home.berita');
+})->name('berita');
+
+Route::get('/informasi', function () {
+  return view('home.informasi');
+})->name('informasi');
