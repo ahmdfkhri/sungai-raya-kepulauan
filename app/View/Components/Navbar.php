@@ -36,8 +36,13 @@ class Navbar extends Component
             ],
             [
                 'name' => 'Berita dan Informasi',
-                'type' => 'link',
-                'url' => route('berita-informasi'),
+                'type' => 'dropdown',
+                'urls' => [route('berita-informasi'), route('berita'), route('informasi')],
+                'items' => [
+                    ['name' => 'Terkini', 'url' => route('berita-informasi')],
+                    ['name' => 'Berita', 'url' => route('berita')],
+                    ['name' => 'Informasi', 'url' => route('informasi')],
+                ],
             ],
 
         ];
