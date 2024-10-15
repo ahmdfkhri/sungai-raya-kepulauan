@@ -16,7 +16,7 @@ class CreateVisiMisiTable extends Migration
         Schema::create('v&m', function (Blueprint $table) {
             $table->id();
             $table->boolean('tipe');
-            $table->string('desc', 100);
+            $table->text('desc');
             $table->timestamps();
         });
     }

@@ -12,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(PegawaiSeeder::class);
+        $this->call([PegawaiSeeder::class]);
+        $this->call([DokpubSeeder::class]);
+        $this->call([VMSeeder::class]);
 
         User::factory()->create([
             'name' => 'Test User',
