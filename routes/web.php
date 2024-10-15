@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VMController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DokpubController;
-
-Route::get('/dokpub', [DokpubController::class, 'index']);
+use App\Http\Controllers\BerinfController;
 
 Route::get('/', function () {
   return view('home.index');
@@ -17,9 +16,7 @@ Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('st
 
 Route::get('/dokumen-publik',[DokpubController::class, 'index'])->name('dokumen-publik');
 
-Route::get('/berita-informasi', function () {
-  return view('home.berita-informasi');
-})->name('berita-informasi');
+Route::get('/berita-informasi', [BerinfController::class, 'index'])->name('berita-informasi');
 
 Route::get('/berita', function () {
   return view('home.berita');
