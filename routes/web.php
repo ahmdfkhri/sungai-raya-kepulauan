@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\VM;
 use App\Http\Controllers\VMController;
 use App\Http\Controllers\PegawaiController;
 

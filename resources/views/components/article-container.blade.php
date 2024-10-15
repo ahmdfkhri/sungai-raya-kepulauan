@@ -15,8 +15,8 @@
     </a>
   </div>
   <div class="flex flex-col lg:flex-row lg:overflow-x-auto lg:whitespace-nowrap lg:w-full gap-5">
-    @foreach ($news as $n)
-      <x-news-card :title="$n['title']" :imageUrl="$n['imageUrl']" :url="$n['url']"/>
+    @foreach ($articles as $a)
+      <x-article-card :imageUrl="$a['imageUrl']" :date="$a['date']" :tag="$a['tag']" :title="$a['title']" :url="$a['url']" :description="$a['description']" :views="$a['views']"/>
     @endforeach
   </div>
 </div>
