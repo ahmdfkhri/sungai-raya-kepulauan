@@ -15,6 +15,7 @@ class BerinfFactory extends Factory
         return [
             'foto' => $this->faker->imageUrl(),  // Data untuk kolom 'foto'
             'judul' => $this->faker->sentence(),  // Data untuk kolom 'judul'
+            'label' => $this->faker->sentence(),  // Data untuk kolom 'label'
             'hight' => $this->faker->boolean(),  // Data untuk kolom 'hight'
             'content_id' => Content::factory(),  // Relasi dengan tabel 'content'
         ];

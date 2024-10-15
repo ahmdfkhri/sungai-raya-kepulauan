@@ -14,6 +14,7 @@ class Berinf extends Model
     protected $fillable = [
         'foto',
         'judul',
+        'label',
         'hight',
         'content_id',
     ];

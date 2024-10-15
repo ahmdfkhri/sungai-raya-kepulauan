@@ -12,6 +12,7 @@ class CreateBerinfTable extends Migration
             $table->id(); // Primary Key
             $table->string('foto'); // Kolom 'foto'
             $table->string('judul'); // Kolom 'judul'
+            $table->string('label'); // Kolom 'label'
             $table->boolean('hight'); // Kolom 'hight' sebagai boolean
             $table->unsignedBigInteger('content_id'); // Kolom Foreign Key 'content_id'
             $table->foreign('content_id')->references('id')->on('content')->onDelete('cascade'); // Foreign Key Reference
