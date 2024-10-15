@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VMController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\DokpubController;
+use App\Http\Controllers\BerinfController;
 
 Route::get('/', function () {
   return view('home.index');
@@ -12,13 +14,9 @@ Route::get('/visi-misi', [VMController::class, 'index'])->name('visi-misi');
 
 Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
 
-Route::get('/dokumen-publik', function () {
-  return view('home.dokumen-publik');
-})->name('dokumen-publik');
+Route::get('/dokumen-publik',[DokpubController::class, 'index'])->name('dokumen-publik');
 
-Route::get('/berita-informasi', function () {
-  return view('home.berita-informasi');
-})->name('berita-informasi');
+Route::get('/berita-informasi', [BerinfController::class, 'index'])->name('berita-informasi');
 
 Route::get('/berita', function () {
   return view('home.berita');

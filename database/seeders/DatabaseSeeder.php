@@ -12,7 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(PegawaiSeeder::class);
+        $this->call([
+            PegawaiSeeder::class,
+            ContentSeeder::class,
+            BerinfSeeder::class,
+            DokpubSeeder::class,
+            VMSeeder::class
+        ]);
+
 
         User::factory()->create([
             'name' => 'Test User',
