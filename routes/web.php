@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\VM;
 use App\Http\Controllers\VMController;
-
-Route::get('/vm-data', function () {
-});
+use App\Http\Controllers\PegawaiController;
 
 Route::get('/', function () {
   return view('home.index');
@@ -13,9 +11,7 @@ Route::get('/', function () {
 
 Route::get('/visi-misi', [VMController::class, 'index'])->name('visi-misi');
 
-Route::get('/struktur-organisasi', function () {
-  return view('home.struktur-organisasi');
-})->name('struktur-organisasi');
+Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
 
 Route::get('/dokumen-publik', function () {
   return view('home.dokumen-publik');
