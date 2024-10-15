@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\VM;
+use App\Http\Controllers\VMController;
+
+Route::get('/vm-data', function () {
+});
 
 Route::get('/', function () {
   return view('home.index');
 })->name('home');
 
-Route::get('/visi-misi', function () {
-  return view('home.visi-misi');
-})->name('visi-misi');
+Route::get('/visi-misi', [VMController::class, 'index'])->name('visi-misi');
 
 Route::get('/struktur-organisasi', function () {
   return view('home.struktur-organisasi');
