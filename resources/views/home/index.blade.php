@@ -1,3 +1,9 @@
 <x-home-base>
-  <h1>Homepage</h1>
+  <main class="flex flex-col items-center gap-4">
+    {{-- Selamat Datang --}}
+    <div>
+      Selamat datang
+    </div>
+    <x-highlight />
+  </main>
 </x-home-base>
