@@ -15,7 +15,7 @@ class PegawaiFactory extends Factory
             'nama_pegawai' => $this->faker->name,
             'jabatan' => $this->faker->word,
             'foto' => $this->faker->imageUrl(),
-            'level' => $this->faker->randomElement(['staff', 'sekretaris', 'camat']),
+            'level' => $this->faker->randomElement([1,2,3]),
         ];
     }
 };

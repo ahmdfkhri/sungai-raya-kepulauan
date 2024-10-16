@@ -14,8 +14,8 @@ class VMFactory extends Factory
     public function definition()
     {
         return [
-            'tipe' => $this->faker->boolean,
-            'desc' => $this->faker->sentence(30), // menghasilkan deskripsi acak
+            'tipe' => $this->faker->randomElement(['visi', 'misi']),
+            'desc' => $this->faker->sentence(30),
             'created_at' => now(),
             'updated_at' => now(),
         ];

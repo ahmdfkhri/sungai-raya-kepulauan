@@ -13,7 +13,7 @@ class CreatePegawaiTable extends Migration
             $table->string('nama_pegawai', 100); // Kolom nama_pegawai (varchar 100)
             $table->string('jabatan', 100); // Kolom jabatan (varchar 100)
             $table->string('foto')->nullable(); // Kolom foto (bisa kosong/null)
-            $table->enum('level', ['staff', 'sekretaris', 'camat']); // Kolom level dengan enum values
+            $table->enum('level', [0, 1, 2]); // Kolom level dengan enum values
             $table->timestamps(); // Kolom created_at dan updated_at
         });
     }

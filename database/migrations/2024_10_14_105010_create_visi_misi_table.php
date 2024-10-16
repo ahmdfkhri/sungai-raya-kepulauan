@@ -15,7 +15,7 @@ class CreateVisiMisiTable extends Migration
     {
         Schema::create('v&m', function (Blueprint $table) {
             $table->id();
-            $table->boolean('tipe');
+            $table->enum('tipe',['visi','misi']);
             $table->text('desc');
             $table->timestamps();
         });
