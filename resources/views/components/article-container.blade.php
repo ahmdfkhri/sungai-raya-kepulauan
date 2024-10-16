@@ -1,4 +1,4 @@
-<div>
+<div class="lg:min-w-full">
   <div class="p-4 mb-4 w-full rounded-lg border-gray-200 shadow flex flex-row justify-between items-center">
     <div>
       <span>
