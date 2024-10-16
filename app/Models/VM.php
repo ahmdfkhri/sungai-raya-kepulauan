@@ -9,5 +9,9 @@ class VM extends Model
 {
     use HasFactory;
 
-    protected $table = 'v&m'; // Pastikan tabel yang digunakan sesuai
+    protected $table = 'v&m';
+
+    protected $fillable = ['tipe', 'desc'];
+
+    // public $timestamps = false;
 }

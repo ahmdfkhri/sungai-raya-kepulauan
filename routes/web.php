@@ -11,6 +11,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/visi-misi', [VMController::class, 'index'])->name('visi-misi');
+Route::get('admin/create-v&m', [VMController::class, 'create'])->name('admin.create');
+Route::post('admin/create-v&m', [VMController::class, 'store'])->name('admin.store');
 
 Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
 
@@ -25,3 +27,7 @@ Route::get('/berita', function () {
 Route::get('/informasi', function () {
   return view('home.informasi');
 })->name('informasi');
+
+Route::get('admin/dashboard', function() {
+  return view('admin.admin');
+})->name('admin.dashboard');
