@@ -1,6 +1,6 @@
 <x-home-base>
   <h1 class="p-4 mb-2 text-3xl font-bold">Dokumen Publik</h1>
-  <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(240px,1fr))]">
+  <div class="grid gap-4 grid-cols-[repeat(auto-fit,minmax(500px,1fr))]">
     @foreach ($dokpubs as $d)
       <div class="p-4 w-full rounded-lg border-gray-200 shadow flex flex-row justify-between items-center">
         <div>
