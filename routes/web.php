@@ -20,6 +20,10 @@ Route::post('/add-vm', [VMController::class, 'addVM'])->name('add.vm');
 Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
 
 Route::get('/dokumen-publik',[DokpubController::class, 'index'])->name('dokumen-publik');
+Route::get('/dokpub', [DokpubController::class, 'edit'])->name('edit.dokpub');
+Route::post('/update-dokpub/{id}', [DokpubController::class, 'update'])->name('update.dokpub');
+Route::delete('/delete-dokpub/{id}', [DokpubController::class, 'delete'])->name('delete.dokpub');
+Route::post('/store-dokpub', [DokpubController::class, 'add'])->name('store.dokpub');
 
 Route::get('/berita-informasi', [BerinfController::class, 'index'])->name('berita-informasi');
 

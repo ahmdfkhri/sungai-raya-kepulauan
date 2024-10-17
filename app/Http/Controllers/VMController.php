@@ -16,7 +16,7 @@ class VMController extends Controller
     public function editVM()
     {
         $vmData = VM::all(); // Mengambil semua data dari tabel VM
-        return view('admin.pages.visi&misi.edit-v&m', compact('vmData'));
+        return view('admin.pages.edit-v&m', compact('vmData'));
     }
 
     public function updateVM(Request $request, $id)

@@ -63,7 +63,6 @@
                 <td>{{ $vm->updated_at }}</td>
                 <td>
                     <!-- Tombol Edit dan Delete -->
-                    <button onclick="editData({{ $vm->id }})">Edit</button>
                     <form action="{{ route('delete.vm', $vm->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
