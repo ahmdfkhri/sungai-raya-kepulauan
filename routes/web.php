@@ -11,8 +11,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/visi-misi', [VMController::class, 'index'])->name('visi-misi');
-Route::get('admin/create-v&m', [VMController::class, 'create'])->name('admin.create');
-Route::post('admin/create-v&m', [VMController::class, 'store'])->name('admin.store');
+Route::get('/edit-vm', [VMController::class, 'editVM'])->name('edit.vm');
+Route::post('/update-vm/{id}', [VMController::class, 'updateVM'])->name('update.vm');
+Route::delete('/delete-vm/{id}', [VMController::class, 'deleteVM'])->name('delete.vm');
+Route::post('/add-vm', [VMController::class, 'addVM'])->name('add.vm');
+
 
 Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
 

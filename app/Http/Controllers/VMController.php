@@ -12,28 +12,50 @@ class VMController extends Controller
         $vmData = VM::all();
         return view('home.visi-misi', ['vmData' => $vmData]); // Pastikan nama view sesuai
     }
-
-    public function create()
+    
+    public function editVM()
     {
-        return view('admin.create-v&m');
+        $vmData = VM::all(); // Mengambil semua data dari tabel VM
+        return view('admin.pages.visi&misi.edit-v&m', compact('vmData'));
     }
 
-    // Fungsi untuk menyimpan data baru
-    public function store(Request $request)
+    public function updateVM(Request $request, $id)
     {
-        // Validasi input
-        $request->validate([
+        $data = $request->validate([
             'tipe' => 'required|in:visi,misi',
             'desc' => 'required|string',
         ]);
 
-        // Simpan data ke dalam tabel v&m
-        VM::create([
-            'tipe' => $request->tipe,
-            'desc' => $request->desc,
+        // Temukan dan perbarui data
+        $vm = VM::findOrFail($id);
+        $vm->tipe = $data['tipe'];
+        $vm->desc = $data['desc'];
+        $vm->save();
+
+        return response()->json(['success' => true]);
+    }
+
+    public function deleteVM($id)
+    {
+        $vm = VM::findOrFail($id);
+        $vm->delete(); // Hapus data
+
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
+    }
+
+    public function addVM(Request $request)
+    {
+        $data = $request->validate([
+            'tipe' => 'required|in:visi,misi',
+            'desc' => 'required|string',
         ]);
 
-        // Redirect ke halaman lain atau tampilkan pesan sukses
-        return redirect()->route('admin.create')->with('success', 'Data visi & misi berhasil disimpan!');
+        $vm = new VM();
+        $vm->tipe = $data['tipe'];
+        $vm->desc = $data['desc'];
+        $vm->save();
+
+        return response()->json(['success' => true]);
     }
+
 };
