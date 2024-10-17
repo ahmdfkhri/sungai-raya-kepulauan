@@ -18,6 +18,11 @@ Route::post('/add-vm', [VMController::class, 'addVM'])->name('add.vm');
 
 
 Route::get('/struktur-organisasi',[PegawaiController::class, 'index'])->name('struktur-organisasi');
+Route::get('/pegawai', [PegawaiController::class, 'edit'])->name('edit.pegawai');
+Route::put('/update-pegawai/{id}', [PegawaiController::class, 'update'])->name('update.pegawai');
+Route::delete('/delete-pegawai/{id}', [PegawaiController::class, 'delete'])->name('delete.pegawai');
+Route::post('/store-pegawai', [PegawaiController::class, 'add'])->name('store.pegawai');
+
 
 Route::get('/dokumen-publik',[DokpubController::class, 'index'])->name('dokumen-publik');
 Route::get('/dokpub', [DokpubController::class, 'edit'])->name('edit.dokpub');

@@ -10,12 +10,12 @@ class VMController extends Controller
     public function index()
     {
         $vmData = VM::all();
-        return view('home.visi-misi', ['vmData' => $vmData]); // Pastikan nama view sesuai
+        return view('home.visi-misi', ['vmData' => $vmData]);
     }
     
     public function editVM()
     {
-        $vmData = VM::all(); // Mengambil semua data dari tabel VM
+        $vmData = VM::all();
         return view('admin.pages.edit-v&m', compact('vmData'));
     }
 
@@ -26,7 +26,6 @@ class VMController extends Controller
             'desc' => 'required|string',
         ]);
 
-        // Temukan dan perbarui data
         $vm = VM::findOrFail($id);
         $vm->tipe = $data['tipe'];
         $vm->desc = $data['desc'];
@@ -38,7 +37,7 @@ class VMController extends Controller
     public function deleteVM($id)
     {
         $vm = VM::findOrFail($id);
-        $vm->delete(); // Hapus data
+        $vm->delete();
 
         return redirect()->back()->with('success', 'Data berhasil dihapus');
     }

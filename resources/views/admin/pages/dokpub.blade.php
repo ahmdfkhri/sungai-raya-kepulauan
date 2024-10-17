@@ -11,7 +11,6 @@
     <div>{{ session('success') }}</div>
 @endif
 
-<!-- Form untuk menambah data baru -->
 <form action="{{ route('store.dokpub') }}" method="POST">
     @csrf
     <label for="judul">Judul:</label>
@@ -23,7 +22,6 @@
     <button type="submit">Tambah Data</button>
 </form>
 
-<!-- Tabel menampilkan semua data -->
 <table border="1">
     <thead>
         <tr>
@@ -53,7 +51,6 @@
                 <td>{{ $dokpub->created_at }}</td>
                 <td>{{ $dokpub->updated_at }}</td>
                 <td>
-                    <!-- Tombol Edit dan Delete -->
                     <button onclick="submitForm({{ $dokpub->id }})">Edit</button>
                     <form action="{{ route('delete.dokpub', $dokpub->id) }}" method="POST" style="display:inline;">
                         @csrf
@@ -72,19 +69,18 @@
         const judul = document.querySelector(`input[name="judul[${id}]"]`).value;
         const tahun = document.querySelector(`input[name="tahun[${id}]"]`).value;
 
-        // Kirim data ke server untuk memperbarui entri
         fetch(`/update-dokpub/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF untuk Laravel
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
             },
             body: JSON.stringify({ judul: judul, tahun: tahun })
         })
         .then(response => {
             if (response.ok) {
                 alert('Data berhasil diperbarui!');
-                location.reload(); // Reload halaman untuk menampilkan data terbaru
+                location.reload();
             } else {
                 alert('Gagal memperbarui data!');
             }

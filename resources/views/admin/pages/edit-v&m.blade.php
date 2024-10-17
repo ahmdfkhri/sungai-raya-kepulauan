@@ -11,7 +11,6 @@
     <div>{{ session('success') }}</div>
 @endif
 
-<!-- Form untuk menambahkan data -->
 <h3>Tambah Data</h3>
 <form id="addVMForm" onsubmit="event.preventDefault(); addData();">
     @csrf
@@ -29,7 +28,6 @@
     <button type="submit">Tambah</button>
 </form>
 
-<!-- Tabel menampilkan semua data -->
 <table border="1">
     <thead>
         <tr>
@@ -62,7 +60,7 @@
                 <td>{{ $vm->created_at }}</td>
                 <td>{{ $vm->updated_at }}</td>
                 <td>
-                    <!-- Tombol Edit dan Delete -->
+
                     <form action="{{ route('delete.vm', $vm->id) }}" method="POST" style="display:inline;">
                         @csrf
                         @method('DELETE')
@@ -81,19 +79,18 @@
         const tipe = document.getElementById('tipe').value;
         const desc = document.getElementById('desc').value;
 
-        // Kirim data ke server untuk menambahkan entri baru
         fetch('/add-vm', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF untuk Laravel
+                'X-CSRF-TOKEN': '{{ csrf_token() }}' 
             },
             body: JSON.stringify({tipe: tipe, desc: desc})
         })
         .then(response => {
             if (response.ok) {
                 alert('Data berhasil ditambahkan!');
-                location.reload(); // Reload halaman untuk menampilkan data terbaru
+                location.reload(); 
             } else {
                 alert('Gagal menambahkan data!');
             }
@@ -102,23 +99,21 @@
     }
 
     function submitForm(id) {
-        // Ambil nilai dari input
         const tipe = document.querySelector(`select[name="tipe[${id}]"]`).value;
         const desc = document.querySelector(`input[name="desc[${id}]"]`).value;
 
-        // Kirim data ke server
         fetch(`/update-vm/${id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF untuk Laravel
+                'X-CSRF-TOKEN': '{{ csrf_token() }}' 
             },
             body: JSON.stringify({tipe: tipe, desc: desc})
         })
         .then(response => {
             if (response.ok) {
                 alert('Data berhasil diperbarui!');
-                location.reload(); // Reload halaman untuk menampilkan data terbaru
+                location.reload(); // 
             } else {
                 alert('Gagal memperbarui data!');
             }
