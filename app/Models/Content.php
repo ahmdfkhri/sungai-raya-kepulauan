@@ -15,11 +15,11 @@ class Content extends Model
         'values',
         'type',
         'order',
+        'berinf_id',
     ];
 
-    // Relasi dengan tabel berinf (One-to-Many)
     public function berinf()
     {
-        return $this->hasMany(Berinf::class, 'content_id');
+        return $this->belongsTo(Berinf::class, 'berinf_id');
     }
-};
+}

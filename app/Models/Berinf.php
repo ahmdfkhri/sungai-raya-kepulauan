@@ -12,16 +12,15 @@ class Berinf extends Model
     protected $table = 'berinf';
 
     protected $fillable = [
-        'foto',
-        'judul',
-        'label',
-        'hight',
-        'content_id',
+        'thumbnail',
+        'title',
+        'category',
+        'views',
+        'highlight',
     ];
 
-    // Relasi dengan tabel content (Many-to-One)
-    public function content()
+    public function contents()
     {
-        return $this->belongsTo(Content::class, 'content_id');
+        return $this->hasMany(Content::class, 'berinf_id');
     }
-};
+}

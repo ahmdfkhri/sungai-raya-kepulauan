@@ -31,6 +31,12 @@ Route::delete('/delete-dokpub/{id}', [DokpubController::class, 'delete'])->name(
 Route::post('/store-dokpub', [DokpubController::class, 'add'])->name('store.dokpub');
 
 Route::get('/berita-informasi', [BerinfController::class, 'index'])->name('berita-informasi');
+Route::get('/berinf', [BerinfController::class, 'views'])->name('berinf.index');
+Route::put('/update-berinf/{id}', [BerinfController::class, 'update'])->name('update.berinf');
+Route::delete('/delete-berinf/{id}', [BerinfController::class, 'delete'])->name('delete.berinf');
+Route::get('/c-berinf/{id?}', [BerinfController::class, 'create'])->name('berinf.create');
+Route::post('/s-berinf', [BerinfController::class, 'store'])->name('berinf.store');
+Route::get('/berinf/{id}', [BerinfController::class, 'show'])->name('berinf.show');
 
 Route::get('/berita', function () {
   return view('home.berita');

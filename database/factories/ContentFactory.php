@@ -12,10 +12,12 @@ class ContentFactory extends Factory
     public function definition()
     {
         return [
-            'values' => $this->faker->sentence(),  // Data untuk kolom 'values'
-            'type' => $this->faker->randomElement(['text', 'image', 'video']),  // Data untuk kolom 'type'
-            'order' => $this->faker->numberBetween(1, 10),  // Data untuk kolom 'order'
+            'values' => $this->faker->paragraph(),
+            'type' => $this->faker->randomElement(['teks', 'foto']),
+            'order' => $this->faker->numberBetween(1, 10),
+            'berinf_id' => \App\Models\Berinf::factory(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 };
-

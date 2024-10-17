@@ -14,8 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PegawaiSeeder::class,
-            ContentSeeder::class,
-            BerinfSeeder::class,
+            BerinfContentSeeder::class,
             DokpubSeeder::class,
             VMSeeder::class
         ]);
