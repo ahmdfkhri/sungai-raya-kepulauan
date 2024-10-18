@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ env('APP_LOCALE', 'en') }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   @vite(['resources/css/app.css','resources/js/app.js'])
-  <title>{{ isset($title) ? $title : "Sui Raya Kepulauan" }}</title>
+  <title>{{ isset($title) ? $title : "Sungai Raya Kepulauan" }}</title>
 </head>
 <body>
   {{ $slot }}
