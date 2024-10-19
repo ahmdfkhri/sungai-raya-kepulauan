@@ -14,7 +14,7 @@
       </p>
     </div>
     <a href="{{ $articleUrl }}">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $title }}</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-wrap">{{ $title }}</h5>
     </a>
     <a href="{{ $articleUrl }}">
       <p class="text-gray-500 text-sm mb-2 text-wrap">{{ Str::limit($description, 200) }}</p>
