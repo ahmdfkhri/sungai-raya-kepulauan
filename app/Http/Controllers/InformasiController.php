@@ -9,15 +9,31 @@ class InformasiController extends Controller
 {
     public function index(Request $request) 
     {
-        $query = Article::informasi();
-        $sort = 'newest';
+        $search = $request->input('search');
+        $sort = $request->input('sort', 'newest');
 
-        if($request->has('search')) {
-            $search = $request->input('search');
+        $query = Article::informasi()->whereNotNull('published_at');
+
+        if ($search) {
             $query->whereRaw('LOWER(title) LIKE ?', ['%' . strtolower($search) . '%']);
         }
 
-        $informasi = $query->where('published_at', '!=', null)->with('firstContent')->paginate(12)->onEachSide(2);
+        switch ($sort) {
+            case 'most_viewed':
+                $query->orderBy('views', 'desc'); // Views paling banyak
+                break;
+            case 'least_viewed':
+                $query->orderBy('views', 'asc'); // Views paling sedikit
+                break;
+            case 'oldest':
+                $query->orderBy('published_at', 'asc'); // Published_at terlama
+                break;
+            default:
+                $query->orderBy('published_at', 'desc'); // Default: published_at terbaru
+                break;
+        }
+
+        $informasi = $query->with('firstContent')->paginate(12)->onEachSide(2);
         return view('home.informasi', compact('informasi'));
     }
 

@@ -5,12 +5,14 @@
     slider-description="Dapatkan Update Terbaru dari Sumber Terpercaya"
     slider-url="{{ route('berita.index') }}"
   />
+  <hr class="h-1 my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full">
   <x-article-slider 
     type="important"
     slider-title="Informasi Penting"
     slider-description="Pengumuman dan Informasi Penting yang Harus Anda Ketahui"
     slider-url="{{ route('informasi.index') }}"
   />
+  <hr class="h-1 my-8 bg-gray-200 border-0 dark:bg-gray-700 w-full">
   <x-article-slider 
     type="popular"
     slider-title="Paling Sering Dilihat"
