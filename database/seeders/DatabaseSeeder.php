@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             ArticleSeeder::class,
             OrgChartSeeder::class,
             VisionAndMissionSeeder::class,
+            PublicDocumentsSeeder::class,
         ]);
 
 
