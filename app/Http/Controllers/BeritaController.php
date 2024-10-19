@@ -21,7 +21,7 @@ class BeritaController extends Controller
     }
 
     public function show($slug) {
-        $berita = Article::berita()->where('slug', $slug)->with('contents')->firstOrFail();
-        return view('home.artikel-show', compact('berita'));
+        $article = Article::berita()->where('slug', $slug)->with('contents')->firstOrFail();
+        return view('home.artikel-show', compact('article'));
     }
 }

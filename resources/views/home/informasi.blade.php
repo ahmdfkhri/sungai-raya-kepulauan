@@ -11,7 +11,7 @@
       :publish-date="$item['published_at']"
       :tag="$item['tag']"
       :description="$item['firstContent']['value']"
-      :article-url="route('berita.index').'/'.$item['slug']"
+      :article-url="route('informasi.index').'/'.$item['slug']"
       :views="$item['views']"
       />
     @endforeach

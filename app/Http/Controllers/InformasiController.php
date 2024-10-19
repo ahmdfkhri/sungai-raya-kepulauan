@@ -22,7 +22,7 @@ class InformasiController extends Controller
     }
 
     public function show($slug) {
-        $berita = Article::informasi()->where('slug', $slug)->with('contents')->firstOrFail();
-        return view('home.artikel-show', compact('informasi'));
+        $article = Article::informasi()->where('slug', $slug)->with('contents')->firstOrFail();
+        return view('home.artikel-show', compact('article'));
     }
 }
