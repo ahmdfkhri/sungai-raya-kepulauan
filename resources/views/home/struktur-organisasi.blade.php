@@ -14,7 +14,7 @@
       <div class="grid w-full md:w-3/4 justify-items-center gap-4 grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))]">
         @foreach ($orgCharts as $e)
           @if ($e->level == $index)
-            <div class="rounded-xl bg-gray-100 flex flex-col justify-center items-center w-3/4">
+            <div class="rounded-xl bg-gray-100 flex flex-col justify-center items-center w-3/4 max-w-60">
               <div class="relative w-full pb-[115%] md:pb-[115%]">
                 <img class="absolute top-0 left-0 w-full h-full object-cover rounded-t-lg" src="{{ $e->employee->image }}" alt=""/>
               </div>

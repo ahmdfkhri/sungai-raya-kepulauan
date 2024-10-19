@@ -1,7 +1,7 @@
 <div class="md:max-w-sm w-full bg-white rounded-xl dark:bg-gray-800 dark:border-gray-700 lg:flex-shrink-0">
   <a href="{{ $articleUrl }}" class="hover:opacity-60 transition-all duration-300">
     <div class="relative w-full pb-[75%] md:pb-[75%] shadow">
-      <img class="absolute top-0 left-0 w-full h-full object-cover rounded-t-lg" src="{{ $thumbnailUrl }}" alt="{{ $title }}"/>
+      <img class="absolute top-0 left-0 w-full h-full object-cover rounded-t-lg" loading="lazy" src="{{ $thumbnailUrl }}" alt="{{ $title }}"/>
     </div>
   </a>
   <div class="p-5 border border-gray-200 rounded-b-xl shadow">
