@@ -20,42 +20,39 @@ class Sidebar extends Component
             [
                 'name' => 'Beranda',
                 'type' => 'link',
-                'url' => route('admin.beranda'),
+                'url' => route('beranda.edit'),
             ],
             [
                 'name' => 'Visi dan Misi',
                 'type' => 'link',
-                'url' => route('admin.visi-misi'),
+                'url' => route('visi-misi.edit'),
             ],
             [
                 'name' => 'Struktur Organisasi',
                 'type' => 'dropdown',
-                'urls' => [],
+                'urls' => [route('pegawai.edit'), route('struktur-organisasi.edit')],
                 'items' => [
-                    ['name' => 'Pegawai', 'url' => route('pegawai.edit')]
+                    ['name' => 'Pegawai', 'url' => route('pegawai.edit')],
+                    ['name' => 'Struktur Organisasi', 'url' => route('struktur-organisasi.edit')],
                 ],
             ],
             [
-                'name' => 'Administrasi',
-                'type' => 'dropdown',
-                'urls' => [route('visi-misi'), route('struktur-organisasi'), route('dokumen-publik') ],
-                'items' => [
-                    ['name' => 'Visi dan Misi', 'url' => route('visi-misi')],
-                    ['name' => 'Struktur Organisasi', 'url' => route('struktur-organisasi')],
-                    ['name' => 'Dokumen Publik', 'url' => route('dokumen-publik')],
-                ],
+                'name' => 'Dokumen Publik',
+                'type' => 'link',
+                'url' => route('dokumen-publik.edit'),
             ],
             [
                 'name' => 'Artikel',
                 'type' => 'dropdown',
-                'urls' => [route('artikel-terkini'), route('berita.index'), route('informasi.index')],
+                'urls' => [route('berita.admin-index'), route('informasi.admin-index')],
                 'items' => [
-                    ['name' => 'Terkini', 'url' => route('artikel-terkini')],
-                    ['name' => 'Berita', 'url' => route('berita.index')],
-                    ['name' => 'Informasi', 'url' => route('informasi.index')],
+                    ['name' => 'Berita', 'url' => route('berita.admin-index')],
+                    ['name' => 'Informasi', 'url' => route('informasi.admin-index')],
                 ],
             ],
         ];
+        
+        $this->currentRoute = request()->url();
     }
 
     /**

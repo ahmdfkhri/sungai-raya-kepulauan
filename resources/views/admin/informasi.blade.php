@@ -1,5 +1,5 @@
 <x-admin-base>
   <h1 class="text-3xl font-bold">
-    Edit Beranda
+    Paginated Informasi Admin
   </h1>
 </x-admin-base>

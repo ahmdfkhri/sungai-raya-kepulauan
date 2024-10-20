@@ -45,7 +45,7 @@ class Navbar extends Component
         ];
 
         // Get current route
-        $this->currentRoute = request()->url();  
+        $this->currentRoute = request()->url();
     }
 
     /**
