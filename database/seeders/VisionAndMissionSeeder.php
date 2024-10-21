@@ -15,13 +15,11 @@ class VisionAndMissionSeeder extends Seeder
     {
         VisionAndMission::factory()->create([
             'type' => 'vision',
-            'order' => 0
         ]);
 
         for ($i=0; $i < 10; $i++) { 
             VisionAndMission::factory()->create([
                 'type' => 'mission',
-                'order' => $i,
             ]);
         }
     }

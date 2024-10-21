@@ -14,11 +14,8 @@ return new class extends Migration
         Schema::create('vision_and_missions', function (Blueprint $table) {
             $table->id();
             $table->enum('type', ['vision', 'mission']);
-            $table->unsignedInteger('order');
             $table->text('value');
             $table->timestamps();
-
-            $table->unique(['type', 'order']);
         });
     }
 

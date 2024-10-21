@@ -28,7 +28,11 @@ Route::get('/informasi/{slug}', [InformasiController::class, 'show']);
 // Semua rute yang ada hubungannya dengan admin harus di dalam sini
 Route::prefix('admin')->group(function () {
   Route::view('/', 'admin.index')->name('beranda.edit');
-  Route::view('/visi-misi', 'admin.visi-misi')->name('visi-misi.edit');
+  Route::get('/visi-misi', [VisiMisiController::class, 'edit'])->name('visi-misi.edit');
+  Route::post('/visi-misi/update', [VisiMisiController::class, 'update'])->name('visi-misi.update');
+  Route::post('/visi-misi/add', [VisiMisiController::class, 'add'])->name('visi-misi.add');
+  Route::get('/visi-misi/delete/{id}', [VisiMisiController::class, 'delete'])->name('visi-misi.delete');
+
   Route::view('/pegawai', 'admin.pegawai')->name('pegawai.edit');
   Route::view('/struktur-organisasi', 'admin.struktur-organisasi')->name('struktur-organisasi.edit');
   Route::view('/dokumen-publik', 'admin.dokumen-publik')->name('dokumen-publik.edit');

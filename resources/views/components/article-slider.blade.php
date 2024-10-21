@@ -22,7 +22,7 @@
     :publish-date="$item['published_at']"
     :tag="$item['tag']"
     :description="$item['firstContent']['value']"
-    :article-url="route('berita.index').'/'.$item['slug']"
+    article-url="{{ route($item->type.'.index').'/'.$item['slug'] }}"
     :views="$item['views']"
     />
     @endforeach
