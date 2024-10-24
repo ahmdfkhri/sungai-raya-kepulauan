@@ -9,4 +9,9 @@ class Employee extends Model
 {
     /** @use HasFactory<\Database\Factories\EmployeeFactory> */
     use HasFactory;
+
+    public $fillable = [
+        'name',
+        'image',
+    ];
 }

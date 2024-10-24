@@ -4,6 +4,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DokumenPublikController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
@@ -33,8 +34,15 @@ Route::prefix('admin')->group(function () {
   Route::post('/visi-misi/add', [VisiMisiController::class, 'add'])->name('visi-misi.add');
   Route::get('/visi-misi/delete/{id}', [VisiMisiController::class, 'delete'])->name('visi-misi.delete');
 
-  Route::view('/pegawai', 'admin.pegawai')->name('pegawai.edit');
-  Route::view('/struktur-organisasi', 'admin.struktur-organisasi')->name('struktur-organisasi.edit');
+  Route::get('/pegawai', [PegawaiController::class, 'edit'])->name('pegawai.edit');
+  Route::post('/pegawai/add', [PegawaiController::class, 'store'])->name('pegawai.add');
+  Route::post('/pegawai/update/{id}', [PegawaiController::class, 'update'])->name('pegawai.update');
+  Route::post('/pegawai/delete/{id}', [PegawaiController::class, 'delete'])->name('pegawai.delete');
+
+  Route::get('/struktur-organisasi', [StrukturOrganisasiController::class, 'edit'])->name('struktur-organisasi.edit');
+  Route::post('/struktur-organisasi', [StrukturOrganisasiController::class, 'store'])->name('struktur-organisasi.store');
+  Route::post('/struktur-organisasi/delete/{id}', [StrukturOrganisasiController::class, 'delete'])->name('struktur-organisasi.delete');
+
   Route::view('/dokumen-publik', 'admin.dokumen-publik')->name('dokumen-publik.edit');
   
   Route::view('/berita', 'admin.berita')->name('berita.admin-index');

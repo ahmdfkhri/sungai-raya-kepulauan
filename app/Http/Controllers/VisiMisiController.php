@@ -49,7 +49,6 @@ class VisiMisiController extends Controller
         VisionAndMission::create([
             'type' => 'mission',
             'value' => $request->input('value'),
-            'order' => $request->input('order'),
         ]);
 
         return redirect()->back()->with('success', 'Mission added successfully');
